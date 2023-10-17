@@ -1,0 +1,41 @@
+%Pachhetto per le formule matematiche
+%------------------------------------
+\usepackage{amsmath}
+
+%Pacchetto per inserire le figure
+%--------------------------------
+\usepackage{graphicx}
+
+%Pacchetto per i link
+%---------------------
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%Stile degli header e del piè di pagina per la numerazione di quest'ultime
+%-------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.59995pt}
+\pagestyle{fancy}%You must call this to activate the style
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[C]{\leftmark} % Display section name in the center of the header
+\fancyfoot[C]{\thepage} % Display page number in the center of the footer
+
+%For forcing figures in place
+%----------------------------
+\usepackage{float}
+%Per le virgolette uncinate
+%--------------------------
+\usepackage{csquotes}%https://it.overleaf.com/project/64a13b57c427c128ad205047
+
+%Formattazione Bibliografia
+%--------------------------
+\usepackage{csquotes}
+%con style= verbose scrive tutto, utile per citare a piè di pagina. Consiglio lo stile "numeric" se vuoi citare tutto in fondo all'elaborato 
+%\usepackage[style=verbose-note, backend=biber]{biblatex}
+
+\usepackage[bibstyle=authortitle,dashed=false,citestyle=verbose-ibid ,ibidtracker=context,citepages=separate,backend=biber]{biblatex}
+
+\DeclareCiteCommand{\customfootcite}[\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {ivi\addnbspace \thefield{page}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}

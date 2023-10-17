@@ -1,0 +1,163 @@
+%Definizione dello stile dell'elaborato
+%--------------------------------------
+%Tra le varie opzioni ci sono article e book, per la tesi consiglio article
+\documentclass{article}
+
+
+%Comandi per non mettere i numeri in section/subsection/subsubsection (nn sta per no numeri)
+\newcommand{\sectionNN}[1]{%
+  \section*{#1}
+  \addcontentsline{toc}{section}{#1}
+}
+
+\newcommand{\subsectionNN}[1]{%
+  \subsection*{#1}
+  \addcontentsline{toc}{subsection}{#1}
+}
+
+\newcommand{\subsubsectionNN}[1]{%
+  \subsubsection*{#1}
+  \addcontentsline{toc}{subsubsection}{#1}
+}
+
+%Scelta della lingua per le parti compilate automaticamente
+%----------------------------------------------------------
+%Per esempio con italian l'indice si chiama "indice" con english si chiama "index"
+\usepackage[italian]{babel}
+
+% Scleta della dimensione della pagina e dei margini
+%---------------------------------------------------
+% Sostituisci `letterpaper' with `a4paper' per le dimensioni standard europee
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%Dimensione font
+\usepackage[fontsize=12pt]{scrextend} %font dimension
+\raggedbottom % Leave space if the page is incomplete
+
+% Useful packages
+%Usa tutti i pacchetti grafici e vari che stanno nel file package.sty
+
+\usepackage{package}
+
+\addbibresource{Bibliografia.bib}
+\addbibresource{Esempio_Bibliografia.bib}
+
+%-----------------------------------Elimina gli elementi di troppo nella bibliografia
+\AtEveryBibitem{%
+  \clearfield{pages}%
+  \clearfield{note}%
+} % Rimuove il campo "pages" e "note" solo nella bibliografia
+%-----------------------------------
+
+
+\begin{document}
+
+%Includo il frontespizio che ho creato come una pagina a se
+\include{Capitoli/Frontespizio}
+
+\pagestyle{empty}
+\clearpage
+
+%Se vuoi puoi fare un abstract per la tua tesi
+%\begin{abstract}
+%Your abstract.
+%\end{abstract}
+%\clearpage
+
+%Indice
+%crea l'indice con tutti i capitoli(section)
+\tableofcontents
+\clearpage
+
+%QUI E' DOVE DEVI INCLUDERE TUTTI I TUOI CAPITOLI CON \include{Captioli\nome_capitoli}
+\pagestyle{fancy}
+\setcounter{page}{1}
+\include{Capitoli/0.Premessa}
+\include{Capitoli/1.Una_nuova_Italia} 
+\include{Capitoli/2.Pasolini}
+\include{Capitoli/3.Il_corpo_la_politica_e_la_letteratura}
+\include{Capitoli/4.RiflessioniFinali}
+
+%Qui se vuoi creare appendici, ma dubito che tu voglia
+%\pagestyle{plain}
+%\clearpage
+%\appendix
+%\pagenumbering{Roman}
+
+%appendix section(Qui dove devi includere tutte le tue appendici)
+%\include{appendices/AppendixA}
+%\include{appendices/AppendixB}
+
+%bibliography(CREA LA BIBLIOGRAFIA )
+%\clearpage
+%\pagenumbering{roman}
+%SE VUOI CHE LA BIBLIOGRAFIA COMPAIA NELL'INDICE TOGLI IL SIMBOLO PERCENTUALE ALLA RIGA SOTTO
+%\addcontentsline{toc}{section}{\refname} % Manually add the bibliography to the table of contents
+
+%---------------------------Aggiungi le fonti non citate direttamente--------------------------------
+\nocite{Martinelli}
+\nocite{Salvatici}
+\nocite{EticaeSesso}
+\nocite{TurningPoint}
+\nocite{DoppioTaglio}
+\nocite{Erotizzazione}
+\nocite{Mulvey}
+\nocite{Cavina}
+\nocite{Banti3}
+\nocite{Sangiovanni}
+
+\nocite{Balestracci3}
+\nocite{Banti2}
+\nocite{Casalino}
+
+\nocite{Moda}
+\nocite{Piazzetta}
+\nocite{Cucchi}
+\nocite{corposvelato}
+
+\nocite{Mangano}
+\nocite{Giori}
+\nocite{Russo}
+\nocite{Desogus}
+\nocite{Eroslatin}
+\nocite{Carnevali}
+\nocite{ScrittiCorsari}
+\nocite{Corpopoplare}
+\nocite{Decameron}
+\nocite{RaccontiCanterbury}
+\nocite{ILfiore}
+\nocite{Salò}
+\nocite{Criscenti}
+
+\nocite{Appunti}
+\nocite{Bazzocchi2}
+\nocite{Turchetta}
+\nocite{Varotti}
+\nocite{Tedesco}
+\nocite{FilmPorci}
+\nocite{PiomboRavera}
+\nocite{Oblique}
+\nocite{UguaglianzaDifferenza}
+\nocite{UguaglianzaDifferenza}
+\nocite{Scaramella}
+
+%----------------------------------------------------------------------------------------------------
+
+\printbibliography[keyword={Bibliografia_finale},heading=bibintoc]
+\printbibliography[keyword={Filmografia_finale},title={Filmografia},heading=bibintoc]
+
+
+
+%acknowledgments
+\newpage
+\pagestyle{empty}
+\clearpage
+%include{Capitoli/Ringraziamenti}
+
+% Blank page
+%\newpage
+
+\mbox{}
+
+\end{document}
+
