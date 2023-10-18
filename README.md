@@ -1,4 +1,7 @@
 # Tesi triennale
+## Installazione Zotero
+Se zotero viene installato su ubuntu può essere necessario aggiornare il database delle applicazioni dopo aver eseguito i comandi per l'istallazione che si trovano sul sito ufficiale di Zotero. Il comando per aggiornare il database delle applicazioni è:
+    - sudo update-desktop-database
 ## Funzionamento estensioni per semplificazione stesura
 
 Per far andare l'estensione di Zotero bisogna andare su:
